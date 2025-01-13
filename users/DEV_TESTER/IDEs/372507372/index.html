@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css"></link>
+	<link rel="icon" href="logo.ico" type="image/x-icon"/></link>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+<meta charset="UTF-8">
+
+
+<title>AllOneIDE</title>
+</head>
+<body>
+<div class="editorContainer">
+<textarea id="codingSpace" oninput="saveContent()"></textarea>
+<iframe id="iframeTerminal">Your HTML will show here!</iframe>
+
+<div id="terminal"></div>
+</div><br>
+<br>
+<br>
+
+<div id="mainDivContainerEverything" >
+<div class="containerDivFunctions">
+<center>
+<button onclick="sampleiFrame()" class="buttonRun">Run</button>
+<button onclick="copyLink()" class="buttonRun">Share</button>
+<button onclick="clearText()" class="buttonRun">Clear</button>
+<button onclick="console.log('placeholder button.')" class="buttonRun">Console (Soon)</button><button onclick="fullscreen()" class="buttonRun" id="buttonFull">⛶</button><button id="openMenuButton" onclick="openMenu()">☰</button>
+
+</center>
+</div>
+<div class="containerDivFunctions" id="containerFunctions1" style="display: none; margin-top: 5px;">
+<center>
+<button class="buttonRun" id="pyButton" onclick="changePythony()" style="width: 48%;" >Python</button><button class="buttonRun" id="pyButton" onclick="changeHTML()" style="width: 48%;" >HTML</button>
+</center>
+</div>
+<div class="containerDivFunctions" id="containerFunctions2" style="display: none; margin-top: 5px;">
+<center>
+<button class="buttonRun" style="width: 22%; display: none;">Files</button><button class="buttonRun" style="width: 22%;" onclick="openUsersPage()">Users</button><button class="buttonRun" style="width: 35%; display: none;">Actions</button><button class="buttonRun" style="text-align: center; display: none;">+</button>
+</center>
+</div>
+</div>
+<div class="filesListHolder" style="display: none;">
+<center>
+<h1 style="margin: auto; margin-top: 10px;">Current Files:</h1>
+<hr class="hrLine">
+</center>
+<div class="fileHolder"><p>Content</p></div>
+</div>
+<button onclick="offscreen()" id="buttonNoFullScreen" >Exit</button>
+
+<div class="filesListHolder" id="fileListHolder">
+<center>
+<h1 style="margin: auto; margin-top: 10px;">Users:</h1>
+<br>
+<div class="bottomHolder"><button onclick="userCreate()" class="buttonRun">Add User</button><input class="inputAddUsername" id="addUserInput" placeholder="Add User..."></input><button style="margin-left: 10px;;" onclick="closeUsersPage()">x</button></div>
+</center>
+<hr class="hrLine">
+
+</div>
+
+<div class="filesListHolder" id="LinkListHolder" style="z-index: 999999999">
+<h1>Link</h1>
+</div>
+<script src="main.js"></script>
+ <script>
+let saveTimer; 
+let isTyping = false; // Flag to detect user typing
+
+function saveContent() {
+    clearTimeout(saveTimer); 
+
+    saveTimer = setTimeout(() => {
+        const content = document.getElementById('codingSpace').value;
+        fetch('save.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `content=${encodeURIComponent(content)}`,
+        })
+            .then(response => response.text())
+            .then(data => console.log('Saved:', data))
+            .catch(error => console.error('Error saving content:', error));
+    }, 301); // Delay in milliseconds
+}
+
+window.onload = function() {
+    fetch('fetch.php')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('codingSpace').value = data;
+        })
+        .catch(error => console.error('Error fetching content:', error));
+};
+
+function onTimeSaveModule() {
+    if (!isTyping) { // Only fetch if the user is not typing
+        fetch('fetch.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('codingSpace').value = data;
+            })
+            .catch(error => console.error('Error fetching content:', error));
+    }
+}
+
+document.getElementById('codingSpace').addEventListener('input', () => {
+    isTyping = true; // User started typing
+    saveContent(); // Trigger save
+});
+
+document.getElementById('codingSpace').addEventListener('blur', () => {
+    isTyping = false; // User stopped typing (blur event)
+});
+
+setInterval(onTimeSaveModule, 300); 
+
+    </script>
+</body>
+
+</html>

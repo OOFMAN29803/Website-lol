@@ -1,0 +1,181 @@
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+background-color: #38EBC1;
+padding: 0px;
+margin: 0px;
+    width: 100%;
+    margin: 0;
+	padding: 7px;
+margin: 0px;
+background-image: url(milestone1.png);
+background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    margin: 0;
+
+		    box-sizing: border-box;
+
+}
+p, a, h1, textarea, small, h2, button, svg, iframe, div, input {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+#codingSpace {
+	width: 43%;
+	height: 90vh;
+	margin-right: 10px;
+	resize: none;
+	border: 3px solid #9FC4BE;
+	background-color: #ffffff;
+	border-radius: 10px;
+	outline: none;
+	padding: 4px;
+	float: right;
+}
+
+button {
+	background-color: #62F0C1;
+	border: 3px solid #2DB381;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    height: inherit;
+    overflow: hidden;
+    flex: 1;
+	padding: 5px;
+	border-radius: 10px;
+	font-size: 25px;
+	font-weight: 600;
+	transition: 0.2s ease;
+	margin: 2px;
+}
+
+button:hover {
+	background-color: #3CCFA3;
+	border: 3px solid #33B08B;
+}
+#iframeTerminal {
+	width: 43%;
+	height: 50vh;
+	border-radius: 10px;
+	border: 3px solid #40C29B;
+	padding: 4px;
+	background-color: white;
+	margin-right: 90px;
+	transition: 0.2s ease;
+	margin-bottom: 40px;
+}
+
+.containerDivFunctions {
+	margin-top: 0px;
+	background-color: #2B805E;
+	border: 3px solid #1F5C43;
+	width: 80%;
+    padding: 6px;
+    font-size: 0; 
+    border-radius: 10px;
+ 
+	justify-content: space-between;
+		    box-sizing: border-box;
+}
+
+
+
+#buttonNoFullScreen {
+	width: 10%;
+	position: fixed;
+	top: 4%;
+	right: 3%;
+	z-index: 999292929;
+	display: none;
+}
+
+#terminal {
+	width: 46%;
+	height: 50vh;
+	border-radius: 10px;
+	border: 3px solid green;
+	padding: 4px;
+	background-color: black;
+	display: none;
+	color: white;
+	margin-top: 5px;
+	margin-bottom: 40px;
+}
+
+#mainDivContainerEverything {
+width: 50%;
+}
+
+.filesListHolder {
+	width: 30%;
+	height: 60vh;
+	background-color: #ffffff;
+	border: 3px solid #4FC29C;
+	border-radius: 10px;
+	position: fixed;
+	top: 50%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+	z-index: 999999999;
+	overflow: auto;
+}
+
+#iframeTerminal, #codingSpace {
+	width: 43%;
+	margin: 0;
+}
+
+.fileHolder {
+	width: 95%;
+	padding: 5px;
+	background-color: #D6FFF0;
+	border: 3px solid #4FC29C;
+	position: relative;
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+	margin: auto;
+}
+
+.hrLine {
+	background-color: #4FC29C;
+	height: 3px;
+	border-radius: 10px;
+	width: 97%;
+	border: none;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	
+}
+
+.bottomHolder {
+		position: absolute;
+	bottom: 0;
+	width: 100%;
+	box-sizing: border-box;
+	border: none;
+	padding: 5px;
+		border: none;
+		background-color: #ffffff;
+		border-top: 3px solid #4FC29C;
+		box-sizing: border-box;
+left: 0;
+}
+
+.inputAddUsername {
+	width: 50%;
+font-size: 25px;
+background-color: #ffffff;
+border: 3px solid #5BEBB1;
+padding: 5px;
+border-radius: 10px;
+outline: none;
+margin: auto;
+font-weight: 700;
+}

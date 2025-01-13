@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css"></link>
+	<link rel="icon" href="logo.ico" type="image/x-icon"/></link>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+
+
+
+<title>AllOneIDE (Alpha Demo)</title>
+</head>
+<body>
+<div style="">
+<textarea id="codingSpace"></textarea>
+<iframe id="iframeTerminal">Your HTML will show here!</iframe>
+<div id="terminal"></div>
+</div><br>
+<br>
+<br>
+<div id="mainDivContainerEverything" >
+<p style="margin-left: 30px; font-weight: 600;">Functions</p>
+<div class="containerDivFunctions">
+<center>
+<button onclick="sampleiFrame()" class="buttonRun">Run</button>
+<button onclick="fullscreen()" class="buttonRun" id="buttonFull">⛶</button>
+<button onclick="copyLink()" class="buttonRun">Share</button>
+<button onclick="clearText()" class="buttonRun">Clear</button>
+<button onclick="console.log('placeholder button.')" class="buttonRun">Place</button>
+</center>
+</div>
+<p style="margin-left: 30px; font-weight: 600;">Compile Types</p>
+<div class="containerDivFunctions">
+<center>
+<button class="buttonRun" id="pyButton" onclick="changePythony()" style="width: 48%;" >Python</button><button class="buttonRun" id="pyButton" onclick="changeHTML()" style="width: 48%;" >HTML</button>
+</center>
+</div>
+<p style="position: fixed; bottom: 1%; right: 1%; font-size: 10px;" >Alpha DEMO. Not ready for release.* Alpha 5 | Pre-Milestone 2 | Build 42.<small> *Release of these builds will include suspension or termination on the spot with further action maybe being involved.</small></p>
+<p style="margin-left: 30px; font-weight: 600;">Extras</p>
+<div class="containerDivFunctions">
+<center>
+<button class="buttonRun" style="width: 22%;">Files</button><button class="buttonRun" style="width: 22%;">Users</button><button class="buttonRun" style="width: 35%;">Actions</button><button class="buttonRun" style="text-align: center;">+</button>
+</center>
+</div>
+</div>
+<button onclick="offscreen()" id="buttonNoFullScreen" >Exit</button>
+<script src="main.js"></script>
+ <script>
+        function fetchContent() {
+            fetch('fetch.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('codingSpace').value = data;
+                })
+                .catch(error => console.error('Error fetching content:', error));
+        }
+
+        function saveContent() {
+            const content = document.getElementById('codingSpace').value;
+            fetch('save.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `content=${encodeURIComponent(content)}`,
+            })
+                .then(response => response.text())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error saving content:', error));
+        }
+
+
+        window.onload = fetchContent;
+    </script>
+</body>
+
+</html>

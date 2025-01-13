@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="AllOneMini.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0167041"
+     inkscape:cx="324.08643"
+     inkscape:cy="198.18943"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7">
+      <path
+         style="font-weight:600;font-size:23.5679px;font-family:'Plus Jakarta Sans';-inkscape-font-specification:'Plus Jakarta Sans Semi-Bold';fill:none;stroke:#d11f00;stroke-width:0"
+         d="M 410.48469,58.728406 V 43.52711 h -3.37021 v -2.35679 h 6.12764 v 17.558086 z"
+         id="path7"
+         aria-label="1"
+         clip-path="none" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath8">
+      <path
+         style="font-weight:300;font-size:42.7292px;font-family:'Plus Jakarta Sans';-inkscape-font-specification:'Plus Jakarta Sans Light';opacity:0.804965;fill:none;fill-opacity:1;stroke:#d11f00;stroke-width:0"
+         d="m 445.81368,58.953482 q -3.29017,0 -6.15302,-1.196417 -2.86284,-1.239149 -5.04203,-3.418337 -2.13648,-2.221918 -3.37563,-5.212961 -1.19639,-3.033773 -1.19639,-6.623026 0,-3.631983 1.19639,-6.623026 1.23915,-2.991046 3.41836,-5.170234 2.17919,-2.221918 4.9993,-3.418337 2.86285,-1.196416 6.15302,-1.196416 3.24742,0 6.11026,1.196416 2.86285,1.196419 4.99933,3.418337 2.17919,2.179188 3.41834,5.212961 1.23912,2.991046 1.23912,6.580299 0,3.589253 -1.23912,6.623026 -1.23915,2.991043 -3.41834,5.212961 -2.13648,2.179188 -4.99933,3.418337 -2.86284,1.196417 -6.11026,1.196417 z m 0,-2.649212 q 2.86285,0 5.25569,-1.068229 2.39283,-1.068231 4.10199,-2.991043 1.75191,-1.922814 2.69195,-4.401108 0.94004,-2.521024 0.94004,-5.341149 0,-2.7774 -0.94004,-5.255692 -0.94004,-2.521024 -2.69195,-4.443838 -1.70916,-1.922812 -4.10199,-2.991043 -2.35011,-1.110959 -5.25569,-1.110959 -2.9056,0 -5.29844,1.110959 -2.35011,1.068231 -4.10199,2.991043 -1.70916,1.922814 -2.64922,4.443838 -0.94004,2.478292 -0.94004,5.255692 0,2.820125 0.94004,5.341149 0.94006,2.478294 2.64922,4.401108 1.75188,1.922812 4.14472,2.991043 2.39284,1.068229 5.25571,1.068229 z"
+         id="path8"
+         aria-label="O" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g7"
+       clip-path="url(#clipPath7)"
+       transform="matrix(2.8079545,0,0,2.8079545,-1103.1016,-89.993828)">
+      <circle
+         style="opacity:0.804965;fill:#5656ff;fill-opacity:1;stroke-width:0.211677"
+         id="circle20"
+         cx="409.97968"
+         cy="44.113888"
+         r="9.0914927" />
+      <circle
+         style="opacity:0.804965;fill:#0078f1;fill-opacity:1;stroke-width:0.211677"
+         id="circle21"
+         cx="408.54428"
+         cy="52.352558"
+         r="9.0914927" />
+      <circle
+         style="opacity:0.804965;fill:#ff8656;fill-opacity:1;stroke-width:0.211677"
+         id="circle22"
+         cx="416.35318"
+         cy="48.94836"
+         r="9.0914927" />
+    </g>
+    <g
+       id="g8"
+       clip-path="url(#clipPath8)"
+       transform="matrix(2.8079545,0,0,2.8079545,-1201.5305,-69.125483)">
+      <circle
+         style="opacity:0.672566;fill:#5656ff;fill-opacity:1;stroke-width:0.391205"
+         id="path3"
+         cx="442.40784"
+         cy="34.216431"
+         r="16.802185" />
+      <circle
+         style="opacity:0.672566;fill:#0078f1;fill-opacity:1;stroke-width:0.391205"
+         id="path3-3"
+         cx="439.75504"
+         cy="49.442509"
+         r="16.802185" />
+      <circle
+         style="opacity:0.672566;fill:#ff8656;fill-opacity:1;stroke-width:0.391205"
+         id="path3-3-4"
+         cx="454.1868"
+         cy="43.151115"
+         r="16.802185" />
+    </g>
+  </g>
+</svg>

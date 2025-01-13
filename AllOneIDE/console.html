@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="icon" href="logo.ico" type="image/x-icon"/></link>
+<title>Default Title</title>
+<style>
+body {
+background-color: #C7D2FF;
+padding: 0px;
+margin: 0px;
+    width: 100%;
+    margin: 0;
+margin: 0px;
+background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    margin: 0;
+
+		    box-sizing: border-box;
+
+}
+p, a, h1, textarea, small, h2, button, svg, iframe, div {
+font-family: 'Courier New', monospace;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+.commandPrompt {
+font-family: 'Courier New', monospace;
+width: 30%;
+height: 30vh;
+background-color: black;
+color: white;
+word-wrap: break-word;
+      overflow-wrap: break-word; 
+      white-space: normal;
+}
+
+.inputCommand {
+font-family: 'Consolas', sans-serif; 
+color: white;
+background-color: black;
+font-weight: 700;
+outline: none;
+width: 100%;
+box-sizing: border-box;
+border: none;
+font-size: 20px;
+}
+
+.mainContent {
+display: flex;
+flex-direction: row;
+border: 3px solid white;
+}
+
+#displayPlace {
+font-weight: 800;
+}
+</style>
+</head>
+<body>
+<div class="commandPrompt">
+<div class="mainContent"><p style="font-weight: 900;">> </p><input class="inputCommand" id="inputCommand"></input><br><br></div><p id="displayPlace"></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+let awaitingResponse = false;
+let fileRead = false;
+let fileWrite = false;
+
+function respondCommand() {
+var inputCommando = document.getElementById("inputCommand")
+var displayPlace = document.getElementById("displayPlace")
+var inputCommand = inputCommando.value
+
+if (inputCommand === "response") {
+inputCommando.value = ""
+awaitingResponse = true;
+
+} else if (inputCommand === "fetch") {
+
+} else if (inputCommand === "readFile") {
+inputCommando.value = "";
+fileRead = true;
+} else if (inputCommand === "writeFile") {
+console.log("setting filewrite to true")
+fileWrite = true;
+inputCommando.value = "";
+
+} else if (inputCommand === "fetch") {
+
+} else {
+if (awaitingResponse === true) {
+displayPlace.textContent = inputCommand
+awaitingResponse = false;
+} else if (fileRead === true) {
+var fileURL = inputCommand;
+fileRead = false;
+ handleReadFile(inputCommand); 
+ } else if (fileWrite === true) {
+var data = inputCommand;
+var command = "writeFile"
+sendCommandToPHP(command, data)
+fileWrite = false;
+} else {
+displayPlace.textContent = inputCommand + " is not defined, try something else."
+}
+}
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        respondCommand();
+    }
+});
+
+function handleReadFile(fileURL) {
+  const displayPlace = document.getElementById("displayPlace");
+
+  axios.get(fileURL)
+    .then((response) => {
+      displayPlace.textContent = "File content:\n" + response.data; // Display file content
+    })
+    .catch((err) => {
+      displayPlace.textContent = "Error reading file: " + err.message; // Display error
+    });
+}
+
+function sendCommandToPHP(command, data = "") {
+    fetch('process.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `command=${encodeURIComponent(command)}&data=${encodeURIComponent(data)}`
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Response from PHP:", data);
+        document.getElementById('displayPlace').textContent = data;
+    })
+    .catch(error => console.error("Error:", error));
+}
+</script>
+</body>
+</html>

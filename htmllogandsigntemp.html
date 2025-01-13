@@ -1,0 +1,125 @@
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Define the path to the user's data
+    $user_file = "users/$username/user.json";
+    $profile_page = "profile.php";
+
+    // Check if user exists
+    if (file_exists($user_file)) {
+        // Read user data from the file
+        $user_data = json_decode(file_get_contents($user_file), true);
+
+        // Verify the password
+        if (password_verify($password, $user_data['password'])) {
+            // Set session token
+            $_SESSION['session_token'] = $user_data['session_token'];
+
+            // Redirect to the user's profile page with session token
+            header("Location: $profile_page");
+            exit();
+        } else {
+            echo "Incorrect password. Please try again.";
+        }
+    } else {
+        echo "User not found. Please sign up first.";
+    }
+}
+?>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+background-color: #B3E8FF;
+padding: 0px;
+margin: 0px;
+font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+p, button, a, h1, small, h2, div, input {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+.inputHolder {
+width: 30%;
+background-color: #4F72FF;
+border: 3px solid #334AA6;
+border-radius: 20px;
+padding: 15px;
+}
+
+input {
+width: 50%;
+height: 40px;
+border-radius: 5px;
+background-color: #B0FFED;
+border: 3px solid #8DCCBE;
+outline: none;
+transition: 0.2s ease;
+margin-bottom: 10px;
+
+}
+
+button {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+height: 40px;
+padding: 2px;
+font-weight: 700;
+border: 3px solid #5964C2;
+border-radius: 5px;
+background-color: #7583FF;
+color: white;
+font-size: 20px;
+transition: 0.3s ease;
+padding: 5px;
+}
+
+button:hover {
+background-color: #5C67C9;
+border: 3px solid #31376B;
+}
+
+input:hover {
+background-color: #82C2BB;
+border: 3px solid #659691;
+}
+</style>
+<div class="inputHolder" id="inputHolder">
+<center>
+<form method="POST" action="">
+<input placeholder="Username. . ."  type="text" name="username" required id="input1"><br>
+<input placeholder="Password. . ." type="password" name="password" required id="input2"><br>
+ <button type="submit" id="buttony">Log In</button><button id="buttony" onclick="window.location.href = 'signup.php'" style="margin-left: 5px;">Sign Up instead</button>
+</form>
+</div>
+
+<script>
+if (navigator.userAgent.match(/iPhone/i)   || navigator.userAgent.match(/iPad/i)  || navigator.userAgent.match(/Android/i)) { 
+var inputy = document.getElementById("inputHolder")
+var buttony = document.getElementById("buttony")
+buttony.style.width = "300px"
+buttony.style.height = "80px"
+buttony.style.fontSize = "30px"
+inputy.style.width = "90%"
+var input1 = document.getElementById("input1")
+input1.style.width = "70%"
+input1.style.height = "90px"
+input1.style.fontSize = "50px"
+var input2 = document.getElementById("input2")
+input2.style.width = "70%"
+input2.style.height = "90px"
+input2.style.fontSize = "50px"
+
+ }
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<link rel="icon" href="logo.ico" type="image/x-icon"/></link>
+<link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/videojs-contrib-ads/dist/videojs.ads.min.js"></script>
+<script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/videojs-ima/dist/videojs.ima.min.js"></script>
+
+
+<title>Video - AllOneCreator</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+background-color: #FF858D;
+padding: 0px;
+margin: 0px;   
+	padding: 0px;
+background-image: url(creatorVectorBackground.png);
+background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+	height:100vh;
+
+		    box-sizing: border-box;
+
+}
+p, a, h1, textarea, small, h2, button, svg, iframe, div, input {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+.videoCurrent {
+width: 70%;
+height: 80%;
+position: fixed;
+left: 0.5%;
+top: 1%;
+box-sizing: border-box;
+}
+</style>
+<body>
+<video class="videoCurrent" id="videoCurrent" class="video-js vjs-default-skin" controls preload="false">
+    <source src="test.mp4" type="video/mp4">
+</video><div>
+
+</div>
+<script>
+
+</script>
+
+<script>
+    var player = videojs('videoCurrent');
+
+    // Configure the IMA plugin
+    player.ima({
+        adTagUrl: 'https://pubads.g.doubleclick.net/gampad/ads?iu=/21775744923/external/single_ad_samples&sz=640x480&cust_params=sample_ct%3Dlinear&ciu_szs=300x250%2C728x90&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=',
+        debug: true,
+    });
+
+    // Initialize the ad display container and request ads
+    player.ready(function () {
+        player.ima.initializeAdDisplayContainer(); // Initialize ad container
+        player.ima.requestAds(); // Request ads
+    });
+</script>
+</body>
+</html>

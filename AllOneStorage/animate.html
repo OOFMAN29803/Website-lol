@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AllOneStorage - Premium Animated Ad</title>
+    <!-- Include the Montserrat font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Your CSS styles here */
+        /* ... (CSS code remains the same) ... */
+    </style>
+</head>
+<body>
+    <div class="adContainer">
+        <!-- Three.js Canvas -->
+        <canvas id="threeCanvas"></canvas>
+
+        <!-- Content Overlay -->
+        <div class="contentOverlay" id="contentOverlay">
+            <!-- Dynamic content will be injected via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Include Three.js (make sure this is before your script) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+    <!-- Include GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+
+    <!-- Your custom script -->
+    <script>
+        // Initialize Three.js Scene
+        let scene, camera, renderer, stars;
+
+        function initThreeJS() {
+            scene = new THREE.Scene();
+
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 1;
+            camera.rotation.x = Math.PI / 2;
+
+            renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threeCanvas'), alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            createStars();
+            animateStars();
+        }
+
+        function createStars() {
+            let starGeo = new THREE.BufferGeometry();
+            let starVertices = [];
+
+            for (let i = 0; i < 6000; i++) {
+                let x = THREE.MathUtils.randFloatSpread(600);
+                let y = THREE.MathUtils.randFloatSpread(600);
+                let z = THREE.MathUtils.randFloatSpread(600);
+                starVertices.push(x, y, z);
+            }
+
+            starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+
+            let sprite = new THREE.TextureLoader().load('https://i.imgur.com/YQwdHnA.png'); // Star sprite image
+            let starMaterial = new THREE.PointsMaterial({
+                color: 0xaaaaaa,
+                size: 0.7,
+                map: sprite,
+                transparent: true
+            });
+
+            stars = new THREE.Points(starGeo, starMaterial);
+            scene.add(stars);
+        }
+
+        function animateStars() {
+            stars.rotation.y += 0.0005;
+
+            renderer.render(scene, camera);
+            requestAnimationFrame(animateStars);
+        }
+
+        // Ensure the scripts run after the page has loaded
+        window.onload = function() {
+            initThreeJS();
+            playScenes();
+        };
+
+        // Content Data
+        const scenes = [
+            {
+                type: 'intro',
+                content: `<h1>AllOneStorage</h1>`,
+                duration: 3
+            },
+            {
+                type: 'feature',
+                content: `
+                    <h1>Intuitive Interface</h1>
+                    <p>Navigate effortlessly with our user-friendly design.</p>
+                `,
+                duration: 3
+            },
+            {
+                type: 'feature',
+                content: `
+                    <h1>10GB for $0.50</h1>
+                    <p>Start your journey with ample storage at an unbeatable price.</p>
+                `,
+                duration: 3
+            },
+            {
+                type: 'feature',
+                content: `
+                    <h1>Privacy Ensured</h1>
+                    <p>Your data remains yours. Always.</p>
+                `,
+                duration: 3
+            },
+            {
+                type: 'feature',
+                content: `
+                    <h1>Access Anywhere</h1>
+                    <p>Reach your files from any corner of the globe.</p>
+                `,
+                duration: 3
+            },
+            {
+                type: 'cta',
+                content: `
+                    <h1>Unlock the Future of Storage</h1>
+                    <button class="ctaButton" onclick="window.location.href='https://yourwebsite.com/signup'">Join Now</button>
+                `,
+                duration: 5
+            }
+        ];
+
+        // GSAP Animation Timeline
+        const tl = gsap.timeline();
+
+        let contentOverlay = document.getElementById('contentOverlay');
+
+        function playScenes() {
+            let totalDuration = 0;
+
+            scenes.forEach(scene => {
+                // Show content
+                tl.call(() => {
+                    contentOverlay.innerHTML = scene.content;
+
+                    // Animate elements in
+                    gsap.fromTo(
+                        contentOverlay.children,
+                        { opacity: 0, y: 50 },
+                        { opacity: 1, y: 0, duration: 1, stagger: 0.2 }
+                    );
+                }, null, totalDuration);
+
+                // Add a pause before the next scene
+                totalDuration += scene.duration;
+
+                // Animate elements out
+                tl.to(
+                    contentOverlay.children,
+                    { opacity: 0, y: -50, duration: 1, stagger: 0.2 },
+                    totalDuration - 1 // Start fading out 1 second before the scene ends
+                );
+            });
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', onWindowResize, false);
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+    </script>
+</body>
+</html>

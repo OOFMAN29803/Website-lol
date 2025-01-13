@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AllOneTech Storyboard Presentation</title>
+
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;900&display=swap" 
+    rel="stylesheet">
+
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- GSAP Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+  <style>
+    /* RESET & BASE STYLES */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* No scroll - ad style */
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      position: relative;
+    }
+
+    /* BACKGROUND: Forest-green, aqua, and light black gradient with swirling shapes */
+    body {
+      background: linear-gradient(120deg, #d9f9f9, #e3ffe6, #f8fff4);
+      background-size: 300% 300%;
+      animation: gradientShift 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* DRIFTING SHAPES */
+    .swirl {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.25;
+      filter: blur(40px);
+      pointer-events: none; /* ignore mouse */
+      z-index: 0; /* behind slides */
+    }
+
+    .swirl.aqua {
+      background-color: #2fe3ff;
+    }
+    .swirl.green {
+      background-color: #c7f9cc;
+    }
+    .swirl.black {
+      background-color: #4a4a4a;
+    }
+
+    /* SLIDES */
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;         /* Hidden by default */
+      transform: translateX(100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 1;         /* Above background */
+    }
+
+    /* HEADLINE */
+    .headline {
+      font-size: 4rem;
+      font-weight: 900;
+      color: #1a202c;
+      margin: 1rem 0;
+    }
+
+    /* SUBHEAD */
+    .subhead {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin: 0.5rem 0;
+    }
+
+    /* SVG LOGOS */
+    .logo {
+      height: 300px;
+      margin-bottom: 1.5rem;
+      opacity: 1;
+      transform: scale(0.8);
+      filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    }
+
+    /* PRICING */
+    .pricing {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #2fe3ff;
+      line-height: 1.5;
+      margin: 1rem 0;
+    }
+    .pricing-sub {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #4a5568;
+    }
+
+    /* FINAL SLIDE */
+    .final-logo {
+      height: 450px; /* Increased size for AllOneTech logo */
+      opacity: 1;
+      transform: scale(1); /* Make it full size */
+      margin-bottom: 1rem;
+    }
+
+    .final-follow {
+      font-size: 1.2rem; /* Smaller text size */
+      color: #2d3748;
+      position: absolute;
+      bottom: 20px; /* Lower on the screen */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Swirling shapes for the background -->
+  <div class="swirl aqua" style="width:300px; height:300px;"></div>
+  <div class="swirl green" style="width:220px; height:220px;"></div>
+  <div class="swirl black" style="width:180px; height:180px;"></div>
+  <div class="swirl aqua" style="width:250px; height:250px;"></div>
+  <div class="swirl green" style="width:280px; height:280px;"></div>
+  <div class="swirl black" style="width:200px; height:200px;"></div>
+
+  <!-- Slide 1 -->
+  <div class="slide" id="slide1">
+    <div class="headline">Introducing...</div>
+    <div class="subhead">Follow us today! It helps</div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" id="slide2">
+    <img src="AllOneIDE.svg" alt="AllOneIDE Logo" class="logo">
+    <div class="subhead">Makes collaboration simple</div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" id="slide3">
+    <div class="headline">Easy to run...</div>
+    <div class="subhead">Python runs with Pyodide! So no extra server costs!</div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide" id="slide4">
+    <div class="pricing">$7.99 USD/month</div>
+    <div class="pricing-sub">But in public preview for <b> FREE </b>next week on Monday</div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide" id="slide5">
+    <div class="headline">Feedback amazingly helpful</div>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="slide" id="slide6">
+    <img src="AllOneTech.svg" alt="AllOneTech Logo" class="final-logo">
+    <div class="final-follow">Follow us today at allonetech.site</div>
+  </div>
+
+  <script>
+    gsap.registerPlugin(TextPlugin);
+
+    // Swirling background animation
+    const shapes = document.querySelectorAll(".swirl");
+    shapes.forEach(shape => {
+      randomDrift(shape);
+    });
+
+    function randomDrift(el) {
+      gsap.set(el, {
+        x: gsap.utils.random(0, window.innerWidth - parseFloat(el.style.width)),
+        y: gsap.utils.random(0, window.innerHeight - parseFloat(el.style.height))
+      });
+      drift(el);
+    }
+    function drift(el) {
+      gsap.to(el, {
+        duration: gsap.utils.random(8, 16),
+        x: gsap.utils.random(0, window.innerWidth - parseFloat(el.style.width)),
+        y: gsap.utils.random(0, window.innerHeight - parseFloat(el.style.height)),
+        ease: "power1.inOut",
+        onComplete: () => drift(el)
+      });
+    }
+
+    // Slides animation
+    const slides = gsap.utils.toArray(".slide");
+
+    // Initial state for slides
+    gsap.set(slides, { opacity: 0, x: '100%' });
+
+    // Master timeline
+    const masterTL = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+
+    slides.forEach((slide, i) => {
+      masterTL
+        .to(slide, { opacity: 1, x: '0%', duration: 1 })
+        .to(slide, {}, "+=3") // Hold on screen
+        .to(slide, { opacity: 0, x: '-100%', duration: 1 }); // Slide out left
+    });
+  </script>
+</body>
+</html>

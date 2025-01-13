@@ -1,0 +1,120 @@
+ @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+padding: 0px;
+margin: 0px;
+background-image: url(LandingPage.png);
+background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    margin: 0;
+	    box-sizing: border-box;
+
+	overflow: auto;
+	
+}
+p, a, h1, small, h2, textarea, button, input {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+button {
+	padding: 5px;
+	border: 3px solid #87B4D6;
+	background-color: #A1D6FF;
+	font-size: 25px;
+	font-weight: 600;
+	margin: 10px;
+	border-radius: 10px;
+}
+
+.containerDiv {
+	width: 60%;
+	background-color: #DEFFF8;
+	border: 3px solid #99E8C8;
+	padding: 5px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+
+input {
+width: 52%;
+border: none;
+border: 3px solid #73A6FF;
+font-size: 25px;
+padding: 5px;
+border-radius: 10px;
+outline: none;
+box-sizing: border-box;
+}
+
+.mainTitle {
+	border: none;
+	border-bottom: 3px solid #73A6FF;
+	font-size: 30px;
+	font-weight: 600;
+	outline: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 5px;
+
+}
+
+.mainTopContainer {
+	width: 60%;
+	padding: 5px;
+		background-color: #DEFFF8;
+	border: 3px solid #99E8C8;
+	border-radius: 10px;
+	margin-top: 50px;
+	
+}
+
+.mainDescription {
+width: 50%;
+border: none;
+border-bottom: 3px solid #73A6FF;
+font-size: 15px;
+resize: none;
+height: 100px;
+padding: 5px;
+border-radius: 10px 10px 0px 0px;
+outline: none;
+
+}
+
+#newTemplateCheck {
+	width: 60%;
+	border-radius: 10px;
+	margin-top: 40px;
+	padding: 10px;
+	background-color: #91EBE5;
+	border: 3px solid #78C2BD;
+	margin-bottom: 20px;
+}
+
+textarea {
+	width: 52%;
+	height: 100px;
+border: none;
+border: 3px solid #73A6FF;
+font-size: 15px;
+padding: 5px;
+border-radius: 10px;
+outline: none;
+box-sizing: border-box;
+resize: none;
+}
+
+.mainFunctionsHolder {
+	width: 20%;
+	padding: 5px;
+	border-radius: 10px;
+	position: fixed;
+	bottom: 2%;
+	left: 1%;
+	font-size: 20px;
+	background-color: #6B8EFF;
+	border: 3px solid #5B79D9;
+}

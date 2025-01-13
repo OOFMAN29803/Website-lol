@@ -1,0 +1,607 @@
+W1025 05:17:06.020000 140278192842560 torch/distributed/run.py:779] 
+W1025 05:17:06.020000 140278192842560 torch/distributed/run.py:779] *****************************************
+W1025 05:17:06.020000 140278192842560 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1025 05:17:06.020000 140278192842560 torch/distributed/run.py:779] *****************************************
+Processing DailyDialog dataset (train split)...
+Processing DailyDialog dataset (train split)...
+Dataset processed. 76052 samples in the train split.
+Building vocabulary...
+Dataset processed. 76052 samples in the train split.
+Building vocabulary...
+Setting up word-index mappings...
+Vocabulary size: 17677
+Loading data from /kaggle/input/trainer/train.json...
+Setting up word-index mappings...
+Vocabulary size: 17677
+Loading data from /kaggle/input/trainer/train.json...
+Dataset processed. 179750 samples loaded.
+Dataset processed. 179750 samples loaded.
+Using existing vocabulary with size: 17677
+Using existing vocabulary with size: 17677
+Processing DailyDialog dataset (validation split)...
+Dataset processed. 7069 samples in the validation split.
+Building vocabulary...
+Processing DailyDialog dataset (validation split)...
+Dataset processed. 7069 samples in the validation split.
+Building vocabulary...
+Setting up word-index mappings...
+Vocabulary size: 6120
+Loading data from /kaggle/input/trainer/train.json...
+Setting up word-index mappings...
+Vocabulary size: 6120
+Loading data from /kaggle/input/trainer/train.json...
+Dataset processed. 179750 samples loaded.
+Using existing vocabulary with size: 6120
+Dataset processed. 179750 samples loaded.
+Using existing vocabulary with size: 6120
+Loading data from /kaggle/input/trainer/valid_freq.json...
+Loading data from /kaggle/input/trainer/valid_freq.json...
+Dataset processed. 11142 samples loaded.
+Using existing vocabulary with size: 6120
+Dataset processed. 11142 samples loaded.
+Using existing vocabulary with size: 6120
+/opt/conda/lib/python3.10/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/opt/conda/lib/python3.10/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+Sanity Checking: |                                        | 0/? [00:00<?, ?it/s]/opt/conda/lib/python3.10/multiprocessing/popen_fork.py:66: RuntimeWarning: os.fork() was called. os.fork() is incompatible with multithreaded code, and JAX is multithreaded, so this will likely lead to a deadlock.
+  self.pid = os.fork()
+Sanity Checking DataLoader 0:   0%|                       | 0/2 [00:00<?, ?it/s][rank1]: Traceback (most recent call last):
+[rank1]:   File "/kaggle/input/trainer/training_script.py", line 482, in <module>
+[rank1]:     main()
+[rank1]:   File "/kaggle/input/trainer/training_script.py", line 469, in main
+[rank1]:     trainer.fit(model)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 538, in fit
+[rank1]:     call._call_and_handle_interrupt(
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 46, in _call_and_handle_interrupt
+[rank1]:     return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+[rank1]:     return function(*args, **kwargs)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 574, in _fit_impl
+[rank1]:     self._run(model, ckpt_path=ckpt_path)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 981, in _run
+[rank1]:     results = self._run_stage()
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+[rank1]:     self._run_sanity_check()
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1052, in _run_sanity_check
+[rank1]:     val_loop.run()
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/utilities.py", line 178, in _decorator
+[rank1]:     return loop_run(self, *args, **kwargs)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 135, in run
+[rank1]:     self._evaluation_step(batch, batch_idx, dataloader_idx, dataloader_iter)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 396, in _evaluation_step
+[rank1]:     output = call._call_strategy_hook(trainer, hook_name, *step_args)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 319, in _call_strategy_hook
+[rank1]:     output = fn(*args, **kwargs)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/strategies/strategy.py", line 410, in validation_step
+[rank1]:     return self._forward_redirection(self.model, self.lightning_module, "validation_step", *args, **kwargs)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/strategies/strategy.py", line 640, in __call__
+[rank1]:     wrapper_output = wrapper_module(*args, **kwargs)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank1]:     return self._call_impl(*args, **kwargs)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank1]:     return forward_call(*args, **kwargs)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1632, in forward
+[rank1]:     inputs, kwargs = self._pre_forward(*inputs, **kwargs)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1530, in _pre_forward
+[rank1]:     self._sync_buffers()
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 2165, in _sync_buffers
+[rank1]:     self._sync_module_buffers(authoritative_rank)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 2169, in _sync_module_buffers
+[rank1]:     self._default_broadcast_coalesced(authoritative_rank=authoritative_rank)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 2191, in _default_broadcast_coalesced
+[rank1]:     self._distributed_broadcast_coalesced(bufs, bucket_size, authoritative_rank)
+[rank1]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 2106, in _distributed_broadcast_coalesced
+[rank1]:     dist._broadcast_coalesced(
+[rank1]: RuntimeError: unsupported operation: some elements of the input tensor and the written-to tensor refer to a single memory location. Please clone() the tensor before performing the operation.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/kaggle/input/trainer/training_script.py", line 482, in <module>
+[rank0]:     main()
+[rank0]:   File "/kaggle/input/trainer/training_script.py", line 469, in main
+[rank0]:     trainer.fit(model)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 538, in fit
+[rank0]:     call._call_and_handle_interrupt(
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 46, in _call_and_handle_interrupt
+[rank0]:     return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+[rank0]:     return function(*args, **kwargs)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 574, in _fit_impl
+[rank0]:     self._run(model, ckpt_path=ckpt_path)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 981, in _run
+[rank0]:     results = self._run_stage()
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+[rank0]:     self._run_sanity_check()
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1052, in _run_sanity_check
+[rank0]:     val_loop.run()
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/utilities.py", line 178, in _decorator
+[rank0]:     return loop_run(self, *args, **kwargs)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 135, in run
+[rank0]:     self._evaluation_step(batch, batch_idx, dataloader_idx, dataloader_iter)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 396, in _evaluation_step
+[rank0]:     output = call._call_strategy_hook(trainer, hook_name, *step_args)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 319, in _call_strategy_hook
+[rank0]:     output = fn(*args, **kwargs)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/strategies/strategy.py", line 410, in validation_step
+[rank0]:     return self._forward_redirection(self.model, self.lightning_module, "validation_step", *args, **kwargs)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/pytorch_lightning/strategies/strategy.py", line 640, in __call__
+[rank0]:     wrapper_output = wrapper_module(*args, **kwargs)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1632, in forward
+[rank0]:     inputs, kwargs = self._pre_forward(*inputs, **kwargs)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1530, in _pre_forward
+[rank0]:     self._sync_buffers()
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 2165, in _sync_buffers
+[rank0]:     self._sync_module_buffers(authoritative_rank)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 2169, in _sync_module_buffers
+[rank0]:     self._default_broadcast_coalesced(authoritative_rank=authoritative_rank)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 2191, in _default_broadcast_coalesced
+[rank0]:     self._distributed_broadcast_coalesced(bufs, bucket_size, authoritative_rank)
+[rank0]:   File "/opt/conda/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 2106, in _distributed_broadcast_coalesced
+[rank0]:     dist._broadcast_coalesced(
+[rank0]: RuntimeError: unsupported operation: some elements of the input tensor and the written-to tensor refer to a single memory location. Please clone() the tensor before performing the operation.
+W1025 05:17:27.390000 140278192842560 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 321 closing signal SIGTERM
+E1025 05:17:27.555000 140278192842560 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 1 (pid: 322) of binary: /opt/conda/bin/python3.10
+Traceback (most recent call last):
+  File "/opt/conda/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/opt/conda/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/opt/conda/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/opt/conda/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/opt/conda/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/kaggle/input/trainer/training_script.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-10-25_05:17:27
+  host      : 0b3ec8df2363
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 322)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+
+
+import torch
+from torch.utils.data import Dataset, DataLoader, ConcatDataset
+import torch.nn as nn
+import torch.optim as optim
+import math
+import os
+import re
+import json
+import traceback
+import sys
+
+# PyTorch Lightning
+import pytorch_lightning as pl
+from pytorch_lightning.callbacks import EarlyStopping
+from pytorch_lightning.loggers import TensorBoardLogger
+
+# Import for Gradient Checkpointing
+import torch.utils.checkpoint as checkpoint
+
+# Hugging Face datasets library
+from datasets import load_dataset
+
+# Hyperparameters
+BATCH_SIZE = 2
+NUM_EPOCHS = 30
+LEARNING_RATE = 6.25e-5
+D_MODEL = 256
+NHEAD = 8
+NUM_ENCODER_LAYERS = 6
+NUM_DECODER_LAYERS = 6
+DIM_FEEDFORWARD = 512
+DROPOUT = 0.1
+WEIGHT_DECAY = 0.0001
+CLIP_GRAD_NORM = 1.0
+ACCUMULATION_STEPS = 16
+
+class DailyDialogDataset(Dataset):
+    def __init__(self, split, vocab=None):
+        dataset = load_dataset("roskoN/dailydialog", split=split)
+        self.data = []
+        self.tokenizer = lambda x: re.findall(r'\b\w+\b', x.lower())
+
+        print(f"Processing DailyDialog dataset ({split} split)...")
+        for utterances in dataset['utterances']:
+            for i in range(len(utterances) - 1):
+                context = ' __eou__ '.join(utterances[:i + 1]).strip()
+                response = utterances[i + 1].strip()
+                if context and response:
+                    self.data.append((context, response))
+        print(f"Dataset processed. {len(self.data)} samples in the {split} split.")
+
+        if vocab is None:
+            print("Building vocabulary...")
+            self.vocab = self.build_vocab(self.data)
+            specials = ['<unk>', '<pad>', '<bos>', '<eos>']
+            for token in specials:
+                if token not in self.vocab:
+                    self.vocab.append(token)
+
+            print("Setting up word-index mappings...")
+            self.word2idx = {word: idx for idx, word in enumerate(self.vocab)}
+            self.idx2word = {idx: word for word, idx in self.word2idx.items()}
+            self.VOCAB_SIZE = len(self.vocab)
+            print(f"Vocabulary size: {self.VOCAB_SIZE}")
+        else:
+            self.vocab = vocab
+            self.word2idx = {word: idx for idx, word in enumerate(self.vocab)}
+            self.idx2word = {idx: word for word, idx in self.word2idx.items()}
+            self.VOCAB_SIZE = len(self.vocab)
+            print(f"Using existing vocabulary with size: {self.VOCAB_SIZE}")
+
+    def build_vocab(self, data):
+        vocab = set()
+        for src, tgt in data:
+            vocab.update(self.tokenizer(src))
+            vocab.update(self.tokenizer(tgt))
+        return sorted(list(vocab))
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        try:
+            src, tgt = self.data[idx]
+            src_tokens = [self.word2idx['<bos>']] + [self.word2idx.get(token, self.word2idx['<unk>']) for token in
+                                                    self.tokenizer(src)] + [self.word2idx['<eos>']]
+            tgt_tokens = [self.word2idx['<bos>']] + [self.word2idx.get(token, self.word2idx['<unk>']) for token in
+                                                    self.tokenizer(tgt)] + [self.word2idx['<eos>']]
+            return torch.tensor(src_tokens), torch.tensor(tgt_tokens)
+        except Exception as e:
+            print(f"Exception in worker process: Error processing data at index {idx}: {e}")
+            print(f"Data: {self.data[idx]}")
+            print(f"Source: {src}, Length: {len(src)}")
+            print(f"Target: {tgt}, Length: {len(tgt)}")
+            traceback.print_exc(file=sys.stderr)
+            raise
+
+
+class TropicalChatDataset(Dataset):
+    def __init__(self, data_path, split, vocab=None):
+        self.data_path = data_path
+        self.split = split
+        self.data = []
+        self.tokenizer = lambda x: re.findall(r'\b\w+\b', x.lower())
+
+        print(f"Loading data from {self.data_path}...")
+        with open(self.data_path, 'r') as f:
+            data = json.load(f)
+
+        for conversation_id, conversation_data in data.items():
+            messages = [turn['message'] for turn in conversation_data['content']]
+            for i in range(len(messages) - 1):
+                context = ' __eou__ '.join(messages[:i + 1]).strip()
+                response = messages[i + 1].strip()
+                if context and response:
+                    self.data.append((context, response))
+
+        print(f"Dataset processed. {len(self.data)} samples loaded.")
+
+        if vocab is None:
+            print("Building vocabulary...")
+            self.vocab = self.build_vocab(self.data)
+
+            specials = ['<unk>', '<pad>', '<bos>', '<eos>']
+            for token in specials:
+                if token not in self.vocab:
+                    self.vocab.append(token)
+
+            print("Setting up word-index mappings...")
+            self.word2idx = {word: idx for idx, word in enumerate(self.vocab)}
+            self.idx2word = {idx: word for word, idx in self.word2idx.items()}
+            self.VOCAB_SIZE = len(self.vocab)
+            print(f"Vocabulary size: {self.VOCAB_SIZE}")
+        else:
+            self.vocab = vocab
+            self.word2idx = {word: idx for idx, word in enumerate(self.vocab)}
+            self.idx2word = {idx: word for word, idx in self.word2idx.items()}
+            self.VOCAB_SIZE = len(self.vocab)
+            print(f"Using existing vocabulary with size: {self.VOCAB_SIZE}")
+
+    def build_vocab(self, data):
+        vocab = set()
+        for src, tgt in data:
+            vocab.update(self.tokenizer(src))
+            vocab.update(self.tokenizer(tgt))
+        return sorted(list(vocab))  # Sort for consistent ordering
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        try:
+            src, tgt = self.data[idx]
+            src_tokens = [self.word2idx['<bos>']] + [self.word2idx.get(token, self.word2idx['<unk>']) for token in
+                                                    self.tokenizer(src)] + [self.word2idx['<eos>']]
+            tgt_tokens = [self.word2idx['<bos>']] + [self.word2idx.get(token, self.word2idx['<unk>']) for token in
+                                                    self.tokenizer(tgt)] + [self.word2idx['<eos>']]
+            return torch.tensor(src_tokens), torch.tensor(tgt_tokens)
+        except Exception as e:
+            print(f"Exception in worker process: Error processing data at index {idx}: {e}")
+            print(f"Data: {self.data[idx]}")
+            print(f"Source: {src}, Length: {len(src)}")
+            print(f"Target: {tgt}, Length: {len(tgt)}")
+            traceback.print_exc(file=sys.stderr)
+            raise
+
+
+
+class PositionalEncoding(nn.Module):
+    def __init__(self, d_model, dropout=0.1, max_len=5000):
+        super().__init__()
+        self.dropout = nn.Dropout(p=dropout)
+
+        pe = torch.zeros(max_len, d_model)
+        position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
+        div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0) / d_model))
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+        pe = pe.unsqueeze(0).transpose(0, 1)
+        self.register_buffer('pe', pe)
+
+    def forward(self, x):
+        x = x + self.pe[:x.size(0), :]
+        return self.dropout(x)
+
+class TransformerModel(nn.Module):
+    def __init__(self, vocab_size, d_model=512, nhead=8, num_encoder_layers=6, num_decoder_layers=6,
+                 dim_feedforward=1024, dropout=0.1):
+        super().__init__()
+        self.embedding = nn.Embedding(vocab_size, d_model)
+        self.pos_encoder = PositionalEncoding(d_model, dropout)
+
+        self.transformer = nn.Transformer(d_model, nhead, num_encoder_layers, num_decoder_layers, dim_feedforward, dropout)
+        self.fc_out = nn.Linear(d_model, vocab_size)
+        self.d_model = d_model
+
+        for p in self.parameters():
+            if p.dim() > 1:
+                nn.init.xavier_uniform_(p)
+
+    def forward(self, src, tgt, src_mask, tgt_mask, src_padding_mask, tgt_padding_mask, memory_key_padding_mask):
+        src = self.embedding(src) * math.sqrt(self.d_model)
+        tgt = self.embedding(tgt) * math.sqrt(self.d_model)
+
+        src = self.pos_encoder(src)
+        tgt = self.pos_encoder(tgt)
+
+        output = self.transformer(src, tgt, src_mask, tgt_mask, None, src_padding_mask, tgt_padding_mask)
+        output = self.fc_out(output)
+        return output
+
+
+class TranslationModule(pl.LightningModule):
+    def __init__(self, vocab_size, d_model, nhead, num_encoder_layers, num_decoder_layers, dim_feedforward, dropout,
+                 learning_rate, weight_decay, accumulation_steps, clip_grad_norm, dataset, train_dataset, val_dataset):
+        super().__init__()
+        self.model = TransformerModel(vocab_size, d_model, nhead, num_encoder_layers, num_decoder_layers,
+                                      dim_feedforward, dropout)
+        self.learning_rate = learning_rate
+        self.weight_decay = weight_decay
+        self.accumulation_steps = accumulation_steps
+        self.clip_grad_norm = clip_grad_norm
+        self.dataset = dataset
+        self.train_dataset = train_dataset
+        self.val_dataset = val_dataset
+        self.criterion = nn.CrossEntropyLoss(ignore_index=self.dataset.datasets[0].word2idx['<pad>'])
+        self.save_hyperparameters(ignore=['dataset', 'train_dataset', 'val_dataset'])
+
+    def forward(self, src, tgt, src_mask, tgt_mask, src_padding_mask, tgt_padding_mask, memory_key_padding_mask):
+        return self.model(src, tgt, src_mask, tgt_mask, src_padding_mask, tgt_padding_mask, memory_key_padding_mask)
+
+    def training_step(self, batch, batch_idx):
+        src, tgt = batch
+        tgt_input = tgt[:, :-1]
+        tgt_out = tgt[:, 1:]
+        src_mask, tgt_mask, src_padding_mask, tgt_padding_mask = self.create_mask(src, tgt_input)
+
+        logits = self(src, tgt_input, src_mask, tgt_mask, src_padding_mask, tgt_padding_mask, src_padding_mask)
+        loss = self.criterion(logits.contiguous().view(-1, logits.size(-1)), tgt_out.contiguous().view(-1))
+
+        self.log("train_loss", loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
+        return {"loss": loss}
+
+    def validation_step(self, batch, batch_idx):
+        src, tgt = batch
+        tgt_input = tgt[:, :-1]
+        tgt_out = tgt[:, 1:]
+        src_mask, tgt_mask, src_padding_mask, tgt_padding_mask = self.create_mask(src, tgt_input)
+        logits = self(src, tgt_input, src_mask, tgt_mask, src_padding_mask, tgt_padding_mask, src_padding_mask)
+        loss = self.criterion(logits.contiguous().view(-1, logits.size(-1)), tgt_out.contiguous().view(-1))
+
+        _, predicted = torch.max(logits, dim=-1)
+        predicted = predicted.view(-1)
+        tgt_out_flat = tgt_out.view(-1)
+        mask = tgt_out_flat != self.dataset.datasets[0].word2idx['<pad>']
+        correct = (predicted == tgt_out_flat) & mask
+
+        # Division by zero fix
+        accuracy = correct.sum().float() / mask.sum().float() if mask.sum().float() > 0 else torch.tensor(0.0).to(self.device)
+
+        self.log("val_loss", loss, on_step=False, on_epoch=True, prog_bar=True, logger=True, sync_dist=True)
+        self.log("val_accuracy", accuracy, on_step=False, on_epoch=True, prog_bar=True, logger=True, sync_dist=True)
+        return {"val_loss": loss, "val_accuracy": accuracy}
+
+    def on_validation_epoch_end(self):
+        if self.global_rank == 0:
+            self.test_conversation()
+
+    def configure_optimizers(self):
+        optimizer = optim.AdamW(self.model.parameters(), lr=self.learning_rate, weight_decay=self.weight_decay)
+        scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=2, verbose=True)
+        return {
+            "optimizer": optimizer,
+            "lr_scheduler": {
+                "scheduler": scheduler,
+                "monitor": "val_loss"
+            }
+        }
+
+    def create_mask(self, src, tgt):
+        tgt_seq_len = tgt.shape[1]
+        tgt_mask = nn.Transformer.generate_square_subsequent_mask(tgt_seq_len).to(self.device)
+        src_mask = None  # If not using a source mask
+        src_padding_mask = (src == self.dataset.datasets[0].word2idx['<pad>'])
+        tgt_padding_mask = (tgt == self.dataset.datasets[0].word2idx['<pad>'])
+        return src_mask, tgt_mask, src_padding_mask, tgt_padding_mask
+
+
+    def translate(self, src_sentence, max_len=100):
+        self.model.eval()
+        with torch.no_grad():
+            src_tokens = [self.dataset.datasets[0].word2idx['<bos>']] + [
+                self.dataset.datasets[0].word2idx.get(token, self.dataset.datasets[0].word2idx['<unk>']) for token in
+                self.dataset.datasets[0].tokenizer(src_sentence.lower())] + [self.dataset.datasets[0].word2idx['<eos>']]
+            src = torch.LongTensor(src_tokens).unsqueeze(0).to(self.device)
+            src_mask = None  # If not using a source mask
+            src_key_padding_mask = (src == self.dataset.datasets[0].word2idx['<pad>'])
+
+            memory = self.model.transformer.encoder(self.model.embedding(src) * math.sqrt(self.model.d_model) + self.model.pos_encoder(self.model.embedding(src)), src_mask, src_key_padding_mask)
+
+            tgt_tokens = [self.dataset.datasets[0].word2idx["<bos>"]]
+            for _ in range(max_len):
+                tgt = torch.LongTensor(tgt_tokens).unsqueeze(0).to(self.device)
+                tgt_mask = nn.Transformer.generate_square_subsequent_mask(len(tgt_tokens)).to(tgt.device)
+
+                tgt_key_padding_mask = (tgt == self.dataset.datasets[0].word2idx['<pad>'])
+
+                output = self.model.transformer.decoder(self.model.embedding(tgt) * math.sqrt(self.model.d_model) + self.model.pos_encoder(self.model.embedding(tgt)), memory, tgt_mask, None, None, tgt_key_padding_mask, src_key_padding_mask)
+
+                output = self.model.fc_out(output)
+                prob = output[:, -1, :]
+                _, next_word = torch.max(prob, dim=1)
+                next_word = next_word.item()
+                tgt_tokens.append(next_word)
+
+                if next_word == self.dataset.datasets[0].word2idx['<eos>']:
+                    break
+
+            translated_sentence = " ".join([self.dataset.datasets[0].idx2word[idx] for idx in tgt_tokens[1:-1]])
+            return translated_sentence
+
+    def train_dataloader(self):
+        return DataLoader(self.train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, # num_workers=0 for debugging during development
+                          pin_memory=True, collate_fn=self.collate_fn, worker_init_fn=self.worker_init_fn)
+
+    def val_dataloader(self):
+        return DataLoader(self.val_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=0, # num_workers=0 for debugging during development
+                          pin_memory=True, collate_fn=self.collate_fn, worker_init_fn=self.worker_init_fn)
+
+    def collate_fn(self, batch):
+        src_batch, tgt_batch = [], []
+        for src_sample, tgt_sample in batch:
+            src_batch.append(src_sample)
+            tgt_batch.append(tgt_sample)
+
+        src_batch = nn.utils.rnn.pad_sequence(src_batch, padding_value=self.dataset.datasets[0].word2idx['<pad>'],
+                                              batch_first=True)
+        tgt_batch = nn.utils.rnn.pad_sequence(tgt_batch, padding_value=self.dataset.datasets[0].word2idx['<pad>'],
+                                              batch_first=True)
+        return src_batch, tgt_batch
+
+    def worker_init_fn(self, worker_id):  # Keep this for debugging worker issues
+        def catch_exceptions(fn, *args, **kwargs):
+            try:
+                return fn(*args, **kwargs)
+            except Exception as e:
+                print(f"Exception in worker process {worker_id}:")
+                traceback.print_exc(file=sys.stderr)
+                raise
+
+        self.train_dataset.__getitem__ = catch_exceptions(self.train_dataset.__getitem__)
+        self.val_dataset.__getitem__ = catch_exceptions(self.val_dataset.__getitem__)
+
+
+    def test_conversation(self):
+        # ... (no changes to this method)
+
+
+
+class SaveModelCallback(pl.callbacks.Callback):
+    def on_epoch_end(self, trainer, pl_module):
+        if trainer.global_rank == 0:  # Only save on the main process
+            epoch = trainer.current_epoch + 1
+            model_path = f"model_epoch_{epoch}.pth"
+            torch.save(pl_module.model.state_dict(), model_path) # Save the model's state_dict
+            print(f"Model saved at {model_path}")
+
+
+
+
+def main():
+    tropicalchat_train_path = "train.json"
+    tropicalchat_val_path = "valid_freq.json"
+
+    dailydialog_train_dataset = DailyDialogDataset(split='train')
+    dailydialog_val_dataset = DailyDialogDataset(split='validation', vocab=dailydialog_train_dataset.vocab)
+
+    tropicalchat_train_dataset = TropicalChatDataset(tropicalchat_train_path, split='train',
+                                                     vocab=dailydialog_train_dataset.vocab)
+    tropicalchat_val_dataset = TropicalChatDataset(tropicalchat_val_path, split='valid',
+                                                   vocab=dailydialog_train_dataset.vocab)
+
+    train_dataset = ConcatDataset([dailydialog_train_dataset, tropicalchat_train_dataset])
+    val_dataset = ConcatDataset([dailydialog_val_dataset, tropicalchat_val_dataset])
+    dataset = train_dataset
+    VOCAB_SIZE = dataset.datasets[0].VOCAB_SIZE
+
+    model = TranslationModule(
+        vocab_size=VOCAB_SIZE, d_model=D_MODEL, nhead=NHEAD, num_encoder_layers=NUM_ENCODER_LAYERS,
+        num_decoder_layers=NUM_DECODER_LAYERS, dim_feedforward=DIM_FEEDFORWARD, dropout=DROPOUT,
+        learning_rate=LEARNING_RATE, weight_decay=WEIGHT_DECAY, accumulation_steps=ACCUMULATION_STEPS,
+        clip_grad_norm=CLIP_GRAD_NORM, dataset=dataset, train_dataset=train_dataset, val_dataset=val_dataset
+    )
+
+    early_stop_callback = EarlyStopping(monitor="val_loss", patience=3, min_delta=0.005, mode="min")
+    save_model_callback = SaveModelCallback()
+    logger = TensorBoardLogger("tb_logs", name="dailydialog_model")
+
+    trainer = pl.Trainer(
+        max_epochs=NUM_EPOCHS,
+        accelerator="gpu" if torch.cuda.is_available() else "cpu",
+        devices=2 if torch.cuda.device_count() >= 2 else 1,
+        strategy="ddp" if torch.cuda.device_count() >= 2 else None,
+        callbacks=[early_stop_callback, save_model_callback],
+        logger=logger,
+        accumulate_grad_batches=ACCUMULATION_STEPS,
+        gradient_clip_val=CLIP_GRAD_NORM,
+        precision="16-mixed" if torch.cuda.is_available() else 32,
+        log_every_n_steps=50,
+        check_val_every_n_epoch=1,
+        num_sanity_val_steps=0, # Remember to set to 2 after debugging
+        enable_checkpointing=True,
+        deterministic=True  # For reproducibility
+    )
+    trainer.fit(model)
+
+
+    if trainer.global_rank == 0:
+        torch.save(model.state_dict(), "final_dailydialog_model.pth") # Save the whole model
+        print("Final model saved as final_dailydialog_model.pth")
+        sample_context = "Hello, how are you?"
+        response = model.translate(sample_context)
+        print(f"Sample Dialogue:")
+        print(f"Context: {sample_context}")
+        print(f"Response: {response}")
+
+
+
+if __name__ == "__main__":
+    main()

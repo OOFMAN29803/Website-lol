@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+background-color: #D6FFF3;
+padding: 0px;
+margin: 0px;
+}
+p, button, a, h1, small, h2, svg {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+.mainTopIndexDiv {
+    background-image: url(IndexScreen.png);
+	margin-top: 0px;
+	margin-left: 0px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.mainIndexDiv {
+    position: absolute; /* Adjusted */
+    left:  -2%; 
+    bottom: -25%; /* Adjust this as needed */
+    transition: 2s ease;
+    z-index: 999;
+}
+
+.mainIndexDiv img {
+	transform: scale(1.5);
+    border-radius: 10px;
+}
+
+.pricingIndex {
+	width: 74%;
+	margin-top: 200px;
+	background-color: #FFED4F;
+	border: 3px solid #D9C943;
+	font-size: 40px;
+	font-weight: 600;
+	border-radius: 20px;
+}
+
+.pricingShow {
+	width: 30%;
+	background-color: #FFED4F;
+	border: 3px solid #D9C943;
+	border-radius: 20px;
+	padding: 15px;
+	 display: inline-block;
+	margin-top: 30px;
+	margin-bottom: 20px;
+		transition: 1s ease;
+
+}
+
+.buyButton {
+	border-radius: 10px;
+	height: 50px;
+	font-weight: 700;
+	font-size: 20px;
+	background-color: #8AFFE8;
+	border: 3px solid #70CFBC;
+	transition: 0.2s ease;
+}
+
+.buyButton:hover {
+	background-color: #56C7BC;
+	border: 3px solid #439C93;
+}
+
+#selectionBar {
+	width: 98%;
+	height: 30px;
+	border-radius: 10px;
+	background-color: #C9C9C9;
+	padding: 5px;
+		    position: relative; 
+	transition: 1s ease;
+}
+
+#selectionAll {
+	width: 90%;
+
+}
+
+#selectionBarUsed {
+	background-color: #F5FF96;
+	height: 100%;
+	width: 50%;
+	float: left;
+	border-radius: 5px;
+	position: relative;
+	z-index: 10;
+		transition: 1s ease;
+
+}
+
+#buttonDot1 {
+	z-index: 1022222;
+	width: 25px;
+	position: absolute;
+    top: 50%;
+    left: 0.4%;
+    transform: translateY(-50%);
+	border-radius: 50px;
+	height: 25px;
+	background-color: #EBEB57;
+	border: 3px solid #D1D14D;
+}
+
+#buttonDot2 {
+	z-index: 1022222;
+	width: 25px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+	border-radius: 50px;
+	height: 25px;
+	background-color: #EBEB57;
+	border: 3px solid #D1D14D;
+}
+
+#buttonDot3 {
+	z-index: 1022222;
+	width: 25px;
+	position: absolute;
+    top: 50%;
+    right: 0.4%;
+    transform: translateY(-50%);
+	border-radius: 50px;
+	height: 25px;
+	background-color: #EBEB57;
+	border: 3px solid #D1D14D;
+}
+
+#workspaceStorageOption {
+		width: 30%;
+	background-color: #FFED4F;
+	border: 3px solid #D9C943;
+	border-radius: 20px;
+	padding: 15px;
+	 display: inline-block;
+	margin-top: 30px;
+	margin-bottom: 20px;
+		transition: 1s ease;
+		margin-top: 50px;
+}

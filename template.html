@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+	padding: 10px;
+}
+
+#modelSelector {
+float: right;
+position: fixed;
+
+}
+
+p, h1, h2, small {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+.AllOneAIContainer {
+	width: 40%;
+	height: 40vh;
+	background-color: #35DE6D;
+	border: 3px solid #2DBD5D;
+	border-radius: 10px;
+	margin-top: 100px;
+	margin-bottom: 20px;
+	padding: 4px;
+	float: left;
+	margin-left: 60px;
+}
+
+.AllOneLogoutContainer {
+	width: 20%;
+	height: 8vh;
+	background-color: #FF6161;
+	border: 3px solid #C94D4D;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding: 4px;
+	position: fixed;
+	right: 4%;
+	top: 3%;
+	margin-left: 60px;
+}
+
+.ExperimentLinkButton2 {
+width: 200px;
+margin-top: 15px;
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+height: 48px;
+padding: 2px;
+font-weight: 700;
+border: 3px solid #4ABA7B;
+border-radius: 5px;
+background-color: #6ED497;
+font-size: 20px;
+transition: 0.2s ease;
+margin-top: 40px;
+}
+.ExperimentLinkButton2:hover {
+  background: linear-gradient(270deg, #00008B, #FFC0CB);
+  background-size: 600% 600%;
+  border: 3px solid; /* Set border size */
+  border-image: linear-gradient(270deg, #000066, #FFA6B2) 1; /* Border gradient */
+  -webkit-animation: GradientFlow 15s ease infinite;
+  -moz-animation: GradientFlow 15s ease infinite;
+  animation: GradientFlow 15s ease infinite;
+  border-radius: 10px solid;
+  color: white;
+}
+
+@-webkit-keyframes GradientFlow {
+  0% {
+    background-position: 0% 50%;
+    border-image-source: linear-gradient(270deg, #000066, #FFA6B2); /* Darker gradient for border */
+  }
+  50% {
+    background-position: 100% 50%;
+    border-image-source: linear-gradient(270deg, #FF9CB0, #000066); /* Border gradient flow */
+  }
+  100% {
+    background-position: 0% 50%;
+    border-image-source: linear-gradient(270deg, #000066, #FFA6B2); /* Darker gradient for border */
+  }
+}
+
+@-moz-keyframes GradientFlow {
+  0% {
+    background-position: 0% 50%;
+    border-image-source: linear-gradient(270deg, #000066, #FFA6B2); /* Darker gradient for border */
+  }
+  50% {
+    background-position: 100% 50%;
+    border-image-source: linear-gradient(270deg, #FF9CB0, #000066); /* Border gradient flow */
+  }
+  100% {
+    background-position: 0% 50%;
+    border-image-source: linear-gradient(270deg, #000066, #FFA6B2); /* Darker gradient for border */
+  }
+}
+
+@keyframes GradientFlow {
+  0% {
+    background-position: 0% 50%;
+    border-image-source: linear-gradient(270deg, #000066, #FFA6B2); /* Darker gradient for border */
+  }
+  50% {
+    background-position: 100% 50%;
+    border-image-source: linear-gradient(270deg, #FF9CB0, #000066); /* Border gradient flow */
+  }
+  100% {
+    background-position: 0% 50%;
+    border-image-source: linear-gradient(270deg, #000066, #FFA6B2); /* Darker gradient for border */
+  }
+}
+</style>
+</head>
+<body>
+<p  style="font-size: 80px;">Welcome, $username</p>
+<br>
+<h1>Welcome to the AllOneTech central hub</h1>
+<br>
+<div class="AllOneAIContainer">
+<h2><b style="color: white;">AllOneAI</b></h2>
+<br>
+<small class="infoLab" style="font-size: 18px;">AllOneAI explores quick and big AI developments and a place for when ready the AI gets released here in this model area, Image, video, text, when ready for the public, right at the moment only one model is available with more to come soon. Stay tuned in this space as it gets ready to become massive, and so fun, upcoming models will be released on here and announced here too! Its all about making cheap and useful AI models for the future!</small>
+<br>
+<br>
+<button class="ExperimentLinkButton2">Chat Now</button>
+</div>
+<div class="AllOneLogoutContainer" onclick="window.location.href = '../../index.php'">
+<h2><b style="color: white; font-size: 30px;" >Logout</b></h2>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

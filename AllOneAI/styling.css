@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+	padding: 10px;
+	background-color: #CCFFF1;
+
+}
+center {
+	background-color: #CCFFF1;
+
+}
+
+p {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+#inputSentence {
+width: 50%;
+height: 4vh;
+outline: none;
+border: 3px solid #B4CFBB;
+background-color: #DEFFE7;
+border-radius: 10px;
+color: black;
+padding: 2px;
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+font-weight: 600;
+transition: 0.3s ease;
+	position: fixed;
+	bottom: 4%;
+	left: 25%;
+	font-size: 20px;
+	resize: none;
+}
+
+#inputSentence:focus {
+background-color: #88A88D;
+border: 3px solid #657D69;
+color: #000000;
+font-size: 20px;
+
+}
+
+
+#submitButton {
+width: 90px;
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+height: 38px;
+padding: 2px;
+font-weight: 700;
+border: 3px solid #5964C2;
+border-radius: 5px;
+background-color: #7583FF;
+color: white;
+font-size: 15px;
+transition: 0.3s ease;
+	position: fixed;
+	bottom: 4.4%;
+	right: 24.9%;
+}
+
+#submitButton:hover {
+background-color: #5C67C9;
+border: 3px solid #31376B;
+}
+
+
+#modelSelector {
+	padding: 5px;
+	max-width: 30%;
+	font-size: 20px;
+	border-radius: 20px;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-weight: 700;
+	background-color: #42C796;
+	border: 3px solid #2E8A68;
+	user-select: none;
+	overflow: hidden;
+}
+
+.changerDiv {
+	max-width: 32%;
+	background-color: #9F8CFF;
+	border: 3px solid #6F62B3;
+	border-radius: 10px;
+	padding: 10px;
+	overflow: hidden;
+		display: none;
+transition: 0.2s ease;
+}
+
+.AllOne12bP {
+	color: black;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.12Bdescription {
+	color: black;
+}
+
+.changerModelDiv {
+	background-color: #E8A2E6;
+	border: 3px solid #AB77A9;
+	border-radius: 10px;
+	padding: 5px;
+	margin-bottom: 0px;
+}
+
+.learnMore {
+	text-decoration: underline;
+}
+
+.disclaimer {
+	padding: 5px;
+}
+
+.topBanner {
+	background-color: white;
+	width: 100%;
+	height: 110px;
+}
+
+.changerModelDiv2 {
+	background-color: #E8A2E6;
+	border: 3px solid #AB77A9;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.comingSoonButton {
+	background-color: #4E80F5;
+	border: 3px solid #385CB0;
+	border-radius: 10px;
+	color: white;
+	width: 60%;
+	height: 30px;
+	margin-left: 100px;
+		font-family: "Plus Jakarta Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+@keyframes wordReveal {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes glow {
+        0% {
+            box-shadow: 0 0 10px rgba(124, 179, 66, 0.5), 0 0 20px rgba(139, 195, 74, 0.5), 0 0 30px rgba(174, 213, 129, 0.5);
+        }
+        50% {
+            box-shadow: 0 0 20px rgba(174, 213, 129, 0.8), 0 0 30px rgba(139, 195, 74, 0.8), 0 0 40px rgba(124, 179, 66, 0.8);
+        }
+        100% {
+            box-shadow: 0 0 10px rgba(124, 179, 66, 0.5), 0 0 20px rgba(139, 195, 74, 0.5), 0 0 30px rgba(174, 213, 129, 0.5);
+        }
+    }
+
+    .glowing-container {
+        animation: glow 5s infinite ease-in-out;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        background-color: #C7ECFF;
+        border: 3px solid #9FBDCC;
+        width: 50%;
+        max-height: 70vh;
+        overflow: auto;
+    }
+
+    .word {
+        display: inline-block;
+        opacity: 0;
+        animation: wordReveal 0.3s forwards;
+        animation-timing-function: ease-in-out;
+        margin-right: 5px;
+        padding: 0; /* Removed padding */
+        border-radius: 0; /* Removed border radius */
+        box-shadow: none; /* Removed box shadow */
+    }
+
+    .word:nth-child(even) {
+        color: rgba(0, 0, 0, 0.9);
+    }
+
+    .word:nth-child(odd) {
+        color: rgba(0, 0, 0, 0.9);
+    }
+	
+.modelSelectButton {
+	width: 20px;
+	height: 20px;
+	float: right;
+	margin-top: -40px;
+	}
+	
+	#infoButton {
+		position: fixed;
+		left: 1%;
+		top: 1%;
+		font-size: 40px;
+		user-select: none;
+	}
+	
+	.infoContainer {
+		width: 40%;
+		background-color: #6EE0DD;
+		border: 3px solid #5BBAB8;
+		position: fixed;
+		padding: 12px;
+		left: 27.5%;
+		border-radius: 5px;
+		display: none;
+	}
+	
+.okButton {
+width: 200px;
+float: left;
+margin-left: 5px;
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+height: 48px;
+padding: 2px;
+font-weight: 700;
+border: 3px solid #4ABA7B;
+border-radius: 5px;
+background-color: #6ED497;
+font-size: 20px;
+transition: 0.2s ease;
+}
+.okButton:hover {
+background-color: #529E71;
+border: 3px solid #417D59;
+}
+
+.userHold {
+	max-width: 400px;
+	padding: 10px;
+	background-color: #52D6A6;
+	border: 3px solid #3D9E7B;
+	border-radius: 5px;
+	float: right;
+	overflow: hidden;
+}

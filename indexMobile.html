@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<head>
+<link rel="stylesheet" type="text/css" href="styleMobile.css"></link>
+<title>AllOneTech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-16">
+
+</head>
+<body>
+<div id="mainTopBar">
+<button onclick="window.location.href='https://forms.gle/AZ8jH1DsPFptzHaL9'" id="formButton">Apply Now</button><button id="menuButton" class="menuButton"onclick="menuPopUp()">≡</button>
+</div>
+<div id="buttonLayout" class="buttonLayout"><button onclick="window.location.href = 'login.php'" class="AllOneBarButton">Log In</button><center><button onclick="window.location.href = 'signup.php'" class="AllOneBarButton">Sign Up</button>
+<button class="AllOneBarButton" onclick="window.location.href = 'AllOneAI/index.html'">AllOneAI</button><button class="AllOneBarButton">AllOneLabs (Soon)</button><button class="AllOneBarButtonConstruct" style="font-size: 15px;">AllOneStorage<br>(Coming in the Future)</button><button class="AllOneBarButton">AllOneWeb (Soon)</button></div><center>
+<div class="mainTopIndexDiv">
+<img class="mainIndexDiv" src="AllOneTechMini.svg"></img>
+</div>
+<br>
+<div class="contactUsDiv">
+<br>
+<center><div class="infoIndexing">
+<p>AllOneTech is a new tech company getting started. We're all volunteers right now, but we have a plan to make money later. We don't have any income yet, but we're working on it.</p>
+<div>
+<br>
+<h1 class="helpTitle">Help is wanted & Needed!</h1>
+</div>
+
+
+<div class="positionBoard">
+<p>There are positions for EVERYONE AT ALL LEVELS</p>
+<p>- Board Members
+<br><small>
+- AI Managers
+<br>
+- Web Managers
+<br>
+- R&D Managers
+<br>
+And smaller jobs under these! Everyone can help!
+</small>
+</p>
+</div>
+<img src="AIScreenshot.png" class="AIImage"></img>
+
+<div class="AllOneLabsContainer">
+<h2><b style="color: white;">AllOneLabs</b></h2>
+<small class="infoLab">AllOneLabs explores cutting edge papers and technologies that are in really early stages or something that is only shown to be a proof of concept. These things will include things like Self-Learning-AI concepts, Leading AI advancements, Software to aid people, Video Generation, Image generation AND SO MUCH MORE</small>
+<br>
+<button class="ExperimentLinkButton">Soon</button>
+</div>
+<center><div class="AllOneAIContainer">
+<h2><b style="color: white;">AllOneAI</b></h2>
+<small class="infoLab">AllOneAI explores quick and big AI developments and a place for when ready the AI gets released here in this model area, Image, video, text, when ready for the public, right at the moment only one model is available with more to come soon. Stay tuned in this space as it gets ready to become massive, and so fun, upcoming models will be released on here and announced here too! Its all about making cheap and useful AI models for the future!</small>
+<br>
+<button class="ExperimentLinkButton2" onclick="window.location.href = 'AllOneAI/index.html'">Chat Now</button>
+</div>
+<center><div class="AllOneWebContainer">
+<h2><b style="color: white;">AllOneWeb</b></h2>
+<small class="infoLab">AllOneWeb focuses more on the websites and services for the web that are helpful to people like Notebook Revamped or keeping the company's websites up to date. Overall its more of a smaller but still important part of the company.</small>
+<br>
+<button class="ExperimentLinkButton3">Soon</button>
+</div>
+<center><div class="AllOneStorageContainer">
+<h2><b style="color: black;">AllOneStorage</b></h2>
+<small class="infoLab">AllOneStorage is a cheap and efficient way to store files in a super cheap way, basically pocket change for the lighter versions, no bloatware, no data harvesting, nothing. Here are the proposed prices (We have the right to change at any time as they are proposals). All Prices in AUD<br><br>Lite -30c for 10GB<br>Small - $3 for 100GB<br>Medium - 10$ for 500GB<br>Big - $20 for 1TB (Coming with more available space)</small>
+<br>
+<button class="ExperimentLinkButton4">Coming in the Future</button>
+</div></center>
+<script src="main.js"></script>
+<script>
+function menuPopUp() {
+var buttonLayout = document.getElementById("buttonLayout")
+buttonLayout.style.display = "block"
+var button = document.getElementById("menuButton")
+button.onclick = menuPopUpNo
+}
+function menuPopUpNo() {
+var buttonLayout = document.getElementById("buttonLayout")
+buttonLayout.style.display = "none"
+var button = document.getElementById("menuButton")
+button.onclick = menuPopUp
+}
+</script>
+</body>
+</html>

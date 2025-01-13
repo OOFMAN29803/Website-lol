@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+background-color: #ffffff;
+padding: 0px;
+margin: 0px;
+}
+p, button, a, h1, small, h2, div {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+.mainInfoTopDiv {
+width: 90%;
+height: 70px;
+background-color: #BDBFFF;
+border: 3px solid #9799CC;
+border-radius: 10px;
+position: fixed;
+top: 5%;
+left: 4.5%;
+padding: 2px;
+}
+
+.barContainer {
+	width: 150px;
+	height: 20px;
+	border-radius: 5px;
+	border: 3px solid #6985E0;
+	float: right;
+	margin-top: 22.5px;
+	margin-right: 30px;
+}
+
+.barStorage {
+	width: 40%;
+	height: 20px;
+	background-color: #78C0FF;
+	float: left;
+}
+
+.storageLimit {
+	font-weight: 600;
+	margin: 0;
+	
+}
+
+.iconSVG {
+	transform: scale(0.2);
+	float: left;
+	margin: 0;
+}
+
+.fileHolder {
+	width: 90%;
+	border: 3px solid;
+	margin-top: 200px;
+	padding: 10px;
+	background-color: #8FDBCC;
+	border: 3px solid #73B0A4;
+	border-radius: 10px;
+}
+
+.file {
+	width: 95%;
+	height: 50px;
+	background-color: #85BAFF;
+	border: 3px solid #6891C7;
+	border-radius: 10px;
+}
+
+.moreOptions {
+	width: 30px;
+	margin-top: 7px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #BAD1FF;
+	border: 3px solid #95A7CC;
+	float: right;
+    text-align: center;
+	margin-right: 10px;
+}
+
+#hello {
+	float: left;
+	margin-left: 10px;
+	font-weight: 600;
+	font-size: 30px;
+	margin-top: 15px;
+}

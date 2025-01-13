@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AllOneTech Storyboard (Complex Version)</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Notice the URL-encoded characters: %40 for '@' and %3B for ';' -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght%40400%3B600%3B700%3B900&amp;display=swap" 
+    rel="stylesheet"
+  >
+
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- GSAP TextPlugin for typewriter-like effect -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+  <style>
+    /*******************************************
+     * RESET & BASE STYLES
+     *******************************************/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto; /* so we can scroll if content grows */
+      background: linear-gradient(120deg, #d9f9f9, #e3ffe6, #f8fff4);
+      background-size: 300% 300%;
+      animation: gradientShift 25s ease-in-out infinite;
+      position: relative;
+    }
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /*******************************************
+     * SWIRL BACKGROUND ELEMENTS
+     *******************************************/
+    .swirl {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+      filter: blur(40px);
+      pointer-events: none; /* ignore mouse so we can click through */
+      z-index: 0;
+    }
+    .swirl.aqua {
+      background-color: #2fe3ff;
+    }
+    .swirl.green {
+      background-color: #c7f9cc;
+    }
+    .swirl.black {
+      background-color: #4a4a4a;
+    }
+
+    /*******************************************
+     * CONTAINER GRID
+     *******************************************/
+    .container {
+      position: relative;
+      z-index: 1; /* above swirl shapes */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 300px);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    /*******************************************
+     * PANEL STYLES
+     *******************************************/
+    .panel {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;          /* start hidden for animation */
+      transform: translateY(50px);
+      position: relative;
+      overflow: hidden;    /* in case we want to hide things that animate in */
+    }
+    .panel img {
+      max-width: 150px;
+      margin: 1rem 0;
+    }
+    .panel h1,
+    .panel h2,
+    .panel h3 {
+      color: #1a202c;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .panel p {
+      color: #4a5568;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .highlight {
+      color: #2fe3ff; /* brand color highlight */
+      font-weight: 700;
+    }
+    .small {
+      font-size: 0.9rem;
+      color: #718096;
+    }
+    a {
+      text-decoration: none;
+      color: #2f855a;
+    }
+    a:hover {
+      opacity: 0.7;
+    }
+
+    /* Example: A fancy "badge" overlay in Panel 1 (just to show something complex) */
+    .badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #2fe3ff;
+      color: #1a202c;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Swirling background shapes (positioned absolutely) -->
+  <div class="swirl aqua" style="width:250px; height:250px;"></div>
+  <div class="swirl green" style="width:220px; height:220px;"></div>
+  <div class="swirl black" style="width:180px; height:180px;"></div>
+  <div class="swirl aqua" style="width:300px; height:300px;"></div>
+  <div class="swirl green" style="width:200px; height:200px;"></div>
+  <div class="swirl black" style="width:280px; height:280px;"></div>
+
+  <div class="container">
+
+    <!-- Panel 1 -->
+    <div class="panel">
+      <div class="badge">NEW!</div>
+      <img src="AllOneIDE.svg" alt="AllOneIDE Logo">
+      <h2>Unlock the Developer in you.</h2>
+      <p>
+        Explore 
+        <a href="https://allonetech.site/IDE" target="_blank">
+          allonetech.site/IDE
+        </a>
+      </p>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="panel">
+      <h1 id="typewriterText">
+        <!-- This will be replaced by GSAP's TextPlugin animation below -->
+      </h1>
+      <p class="small">
+        *After public preview, it will cost 
+        <span class="highlight">USD $7.99</span> 
+        per month
+      </p>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="panel">
+      <h3>Integrated with your AllOneTech account!</h3>
+      <h1>Seamlessly</h1>
+    </div>
+
+    <!-- Panel 4 -->
+    <div class="panel">
+      <h2>Simplistic, but powerful</h2>
+      <img src="snapshot.png" alt="AllOneIDE snapshot">
+    </div>
+
+    <!-- Panel 5 -->
+    <div class="panel">
+      <h2>Mark your calendar</h2>
+      <p>Today Monday 3PM Sydney Time</p>
+      <p><span class="highlight">In public preview</span></p>
+    </div>
+
+    <!-- Panel 6 -->
+    <div class="panel">
+      <img src="AllOneTechMini.svg" alt="AllOneTechMini Logo">
+      <h2>AllOneTech Tools</h2>
+      <p>Streamlined for every developer</p>
+    </div>
+
+  </div>
+
+  <script>
+    // Register the GSAP TextPlugin
+    gsap.registerPlugin(TextPlugin);
+
+    // 1) Random drifting for swirl shapes
+    const shapes = document.querySelectorAll(".swirl");
+    shapes.forEach(shape => {
+      // Start at random position
+      randomPosition(shape);
+      // Animate
+      drift(shape);
+    });
+
+    function randomPosition(el) {
+      // random x/y within window bounds (minus the shape's width/height)
+      const x = gsap.utils.random(0, window.innerWidth - parseFloat(el.style.width));
+      const y = gsap.utils.random(0, window.innerHeight - parseFloat(el.style.height));
+      gsap.set(el, { x: x, y: y });
+    }
+
+    function drift(el) {
+      const duration = gsap.utils.random(10, 20);
+      const x = gsap.utils.random(0, window.innerWidth - parseFloat(el.style.width));
+      const y = gsap.utils.random(0, window.innerHeight - parseFloat(el.style.height));
+      gsap.to(el, {
+        duration: duration,
+        x: x,
+        y: y,
+        ease: "power1.inOut",
+        onComplete: () => drift(el)
+      });
+    }
+
+    // 2) Panel fade-up animation
+    gsap.to(".panel", {
+      duration: 1.2,
+      opacity: 1,
+      y: 0,
+      stagger: 0.3,
+      ease: "power2.out"
+    });
+
+    // 3) Typewriter effect on #typewriterText
+    gsap.to("#typewriterText", {
+      duration: 4,
+      text: "For free in the Public Preview stage",
+      ease: "none", // to mimic a typewriter effect
+      delay: 1      // wait 1 second to start typing
+    });
+  </script>
+</body>
+</html>

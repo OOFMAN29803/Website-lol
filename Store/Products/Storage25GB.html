@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head><link rel="stylesheet" type="text/css" href="styles.css"></link>
+<link rel="icon" href="logo.ico" type="image/x-icon"/></link>
+<title>Product Review</title>
+</head>
+<body>
+
+<div class="productDiv" style="margin-left: 0px;">
+<img src="AllOneTechMini.svg" class="imgSVG"></img>
+<div class="pricingHolder">
+<p>AllOneStorage 25GB<br></p>
+</div>
+</div>
+
+<div class="mainPaymentInfo">
+<div class="usernameHolder"><p>Username: %USERNAME%</p></div>
+<br>
+<div class="usernameHolder"><p>Product: %PRODUCT%</p></div>
+<br>
+<div class="promotionHolder">
+<p style="font-size: 25px; font-weight: 600;">Enter Promo Code:</p>
+<input class="inputPromo" id="inputPromo" placeholder="Enter Promo Code..."></input><button class="submitButton">Check</button>
+</div>
+<div class="paymentInfo"><h3>Final Payment</h3>
+<h5>Product: AllOneStorage 25GB</h4>
+<h5>Subtotal: %PRICE%</h5>
+<h5>Promotions Applied: %PRICEMOTION%</h5>
+<div><h4 style="font-weight: 800;">Final Payment %FINALPRICE%</h4><button class="gpaybutton">Subscribe with <b>GPay</b></button></div>
+<small style="font-size: 10px;">This is a recurring monthly payment that will continue until you turn it off, The promotion will only last as long as it says in the promotion details, and will revert back to the previous price.</small>
+</div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

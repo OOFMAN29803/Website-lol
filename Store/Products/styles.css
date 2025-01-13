@@ -1,0 +1,149 @@
+  body {
+background-color: #FFE9D6;
+padding: 10px;
+margin: 0px;
+
+    margin: 0;
+	    box-sizing: border-box;
+
+	overflow: auto;
+	
+}
+p, a, h1, small, h2, textarea, button, input, h3, h4, h5 {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+
+.productDiv {
+	 background-color: #FFC0AD;
+	 border: 3px solid #DEA797;
+	 border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    display: block;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    height: 70vh;
+	overflow: hidden;
+	margin-left: 10px;
+	width: 25%;
+		    box-sizing: border-box;
+	float: right;
+	position: relative;
+	
+}
+
+.pricingHolder {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	border: 3px solid;
+	padding: 5px;
+		border: none;
+position: absolute;
+	background-color: #FFBFA3;
+	border-top: 3px solid #DEA68E;
+}
+
+.imgSVG {
+    width: 100%;
+    height: auto; 
+    display: block;
+	top: 0;
+    margin: auto;
+}
+
+.mainPaymentInfo {
+	width: 72%;
+	height: 97vh;
+	background-color: #8D78E4;
+	border: 3px solid #7362BA;
+	float: left;
+	border-radius: 10px;
+	overflow: auto;
+	padding: 10px;
+			    box-sizing: border-box;
+}
+
+.usernameHolder {
+	width: 100%;
+	padding: 5px;
+	border-radius: 10px;
+	background-color: #538FDA;
+	border: 3px solid #477ABA;
+    box-sizing: border-box;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+input {
+	width: 25%;
+	font-size: 20px;
+	font-weight: 600;
+	background-color: #ffffff;
+border: 3px solid #81E6C7;
+border-radius: 10px;
+outline: none;
+padding: 5px;
+transition: 0.2s ease;
+border-radius: 10px;
+}
+
+input:hover {
+	background-color:  #DBDBDB;
+	border: 3px solid #70C7AC;
+
+
+}
+
+
+.submitButton {
+	background-color: #FFC28C;
+	border: 3px solid #C9996F;
+	padding: 5px;
+	border-radius: 10px;
+	width: 15%;
+	font-size: 20px;
+	font-weight: 600;
+	margin-left: 20px;
+	transition: 0.2s ease;
+}
+
+.submitButton:hover {
+	background-color: #DBAE60;
+	border: 3px solid #B5904F;
+}
+
+.promotionHolder {
+		width: 100%;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #538FDA;
+	border: 3px solid #477ABA;
+    box-sizing: border-box;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.paymentInfo {
+		width: 100%;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #538FDA;
+	border: 3px solid #477ABA;
+    box-sizing: border-box;
+	font-size: 21px;
+	overflow: auto;
+}
+
+.gpaybutton {
+	font-size: 15px;
+	padding: 10px;
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid;
+}

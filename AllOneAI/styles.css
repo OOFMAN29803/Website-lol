@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+background-color: #000000;
+padding: 0px;
+margin: 0px;
+}
+p, a, h1, small, h2, button {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+.mainTopIndexDiv {
+    background-image: url(IndexScreen.png);
+	margin-top: 0px;
+	margin-left: 0px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.mainIndexDiv {
+    position: absolute; /* Adjusted */
+    left: 5%; 
+    bottom: 5%; /* Adjust this as needed */
+    opacity: 0;
+    transition: 2s ease;
+    z-index: 999;
+}
+
+.mainIndexDiv img {
+    height: 100px;
+    width: 30%;
+    border-radius: 10px;
+    opacity: 1; /* Adjust this for testing */
+    transition: 2s ease;
+}
+
+#transition2 {
+	width: 20%;
+	height: 70px;
+	border-radius: 5px;
+	border: 3px solid #7CA38C;
+	background-color: #B0E8C7;
+	right: 10%;
+	opacity: 0;
+	transition: 0.2s ease;
+	font-size: 30px;
+	font-weight: 600;
+}
+
+#transition2:hover {
+	background-color: #85FFFF;
+	border: 3px solid #6DD1D1;
+	transition: 0.2s ease;
+}
+
+.aiEnvironmentalDiv {
+	width: 40%;
+	background-color: #456E58;
+	border: 3px solid #365745;
+	margin-left: 30px;
+	margin-top: 60px;
+	border-radius: 10px;
+	padding: 7px;
+	overflow: auto;
+}
+
+.aiBadRightNowDiv {
+	width: 40%;
+	background-color: #85AB8F;
+	border: 3px solid #75967D;
+	margin-right: 30px;
+	margin-top: 60px;
+	border-radius: 10px;
+	padding: 7px;
+	margin-bottom: 20px;
+	margin-top: 100px;
+	float: right;
+    overflow: auto;
+
+}

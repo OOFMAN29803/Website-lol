@@ -1,0 +1,110 @@
+   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+background-color: #BFCCFF;
+padding: 0px;
+margin: 0px;
+    width: 100%;
+    margin: 0;
+	padding: 7px;
+margin: 0px;
+background-image: url(milestone1.png);
+background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    margin: 0;
+
+		    box-sizing: border-box;
+
+}
+p, a, h1, textarea, small, h2, button, svg, iframe, div, input {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+.topParentContainer {
+	position: relative;
+	display: flex;
+	padding: 5px;
+	margin: auto;
+	width: 98%;
+	box-sizing: border-box;
+    flex-direction: row;
+	justify-content: space-between;
+	margin: auto;
+	
+
+}
+
+.topBarSideLeft {
+	width: 66%;
+	background-color: #3D43EB;
+	padding: 6px;
+	display: flex;
+	border: 3px solid #2E32B0;
+	box-sizing: border-box;
+		align-items: center;
+	overflow: auto;
+	
+	border-radius: 10px;
+}
+
+.searchContainer {
+	width: 33.5%;
+	background-color: #3D43EB;
+	padding: 6px;
+	display: flex;
+	border: 3px solid #2E32B0;
+	box-sizing: border-box;
+	border-radius: 10px;
+	text-align: center;
+	box-sizing: border-box;
+			align-items: center;
+
+}
+
+.searchIndexInput {
+	background-color: #ffffff;
+	border: 3px solid #4AEDB7;
+	margin: auto;
+	display: flex;
+	width: 70%;
+	outline: none;
+	transition: 0.2s ease;
+	border-radius: 10px;
+	padding: 6px;
+	height: 80%;
+	box-sizing: border-box;
+}
+
+.searchIndexInput:focus {
+	border: 3px solid #38B38A;
+	background-color: #DEDEDE;
+}
+
+.functionTopBar {
+	margin: auto;
+	display: flex;
+	background-color: #94BFFF;
+	border: 3px solid #7CA0D6;
+	font-size:  20px;
+	color: black;
+	border-radius: 10px;
+	height: 80%;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: 0.2s ease;
+}
+.functionTopBar:hover {
+background-color: #6399D6;
+border: 3px solid #5685BA;
+}
+
+.functionHolder {
+	width: 40%;
+	display: flex;
+	flex-direction: row;
+
+}

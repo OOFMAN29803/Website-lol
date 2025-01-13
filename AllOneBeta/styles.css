@@ -1,0 +1,133 @@
+ @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+background-color: #99F0F0;
+padding: 00px;
+margin: 0px;
+background-image: url(screen.png);
+background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    margin: 0;
+}
+p, a, h1, small, h2, button, svg {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+.mainTopIndexDiv {
+	margin-top: 0px;
+	margin-left: 0px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.mainIndexTitle {
+	font-size: 50px;
+	font-width: 600;
+}
+
+.mainIndexDiv {
+	width: 50%;
+	height: 25vh;
+	border-radius: 10px;
+	position: absolute;
+    left: 5%; 
+	bottom: 4%;
+}
+
+.infoDiv {
+	width: 50%;
+	background-color: #5291FF;
+	border: 3px solid #3966B3;
+	font-size: 25px;
+	font-weight: 600;
+	color: white;
+	border-radius: 10px;
+	margin-top: 100px;
+}
+
+.AllOneBetaSteps1 {
+	width: 50%;
+	background-color: #5291FF;
+	border: 3px solid #3966B3;
+	font-size: 35px;
+	font-weight: 600;
+	color: white;
+	border-radius: 10px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	margin-right: 400px
+
+}
+
+.AllOneBetaSteps2 {
+	width: 50%;
+	background-color: #5291FF;
+	border: 3px solid #3966B3;
+	font-size: 35px;
+	font-weight: 600;
+	color: white;
+	border-radius: 10px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+
+}
+
+.AllOneBetaSteps3 {
+	width: 50%;
+	background-color: #5291FF;
+	border: 3px solid #3966B3;
+	font-size: 35px;
+	font-weight: 600;
+	color: white;
+	border-radius: 10px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+    margin-left: 400px
+
+
+}
+
+.AllOneBetaSteps4 {
+	width: 50%;
+	background-color: #5291FF;
+	border: 3px solid #3966B3;
+	font-size: 35px;
+	font-weight: 600;
+	color: white;
+	border-radius: 10px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+
+}
+
+.betaButton {
+	  background: linear-gradient(to right, #5C61FF, #B649D1);
+margin-right: 5px;
+margin-bottom: 20px;
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+height: 48px;
+padding: 4px;
+font-weight: 700;
+border: 3px solid #9854FF;
+border-radius: 5px;
+background-color: #9854FF;
+font-size: 30px;
+transition: 0.2s ease;
+color: white;
+}
+.betaButton:hover {
+background: linear-gradient(to right, #B649D1, #5C61FF);
+border: 3px solid #7541C4;
+}

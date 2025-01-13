@@ -1,0 +1,158 @@
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body {
+background-color: #FF858D;
+padding: 0px;
+margin: 0px;   
+	padding: 7px;
+background-image: url(creatorVectorBackground.png);
+background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+	height:100vh;
+
+		    box-sizing: border-box;
+
+}
+p, a, h1, textarea, small, h2, button, svg, iframe, div, input {
+font-family: "Plus Jakarta Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+
+
+#mainVideoCreateParent {
+		width: 90%;
+	height: 80vh;
+	background-color: #E0E8FF;
+	border: 3px solid #C2C8FF;
+	border-radius: 10px;
+	position: fixed;
+	top: 50%;
+	padding: 10px;
+	position: relative;
+    left: 50%;
+  transform: translate(-50%, -50%);
+	z-index: 999999999;
+	overflow: auto;
+	transition: 0.3s ease;
+	box-sizing: border-box;
+}
+
+.uploadVideoDiv {
+	position: absolute;
+	top: 1%;
+	left: 0.5%;
+	width: 45%;
+	height: 45%;
+	display: flex;
+	border: 3px dotted #7A7AFF;
+	background-color: #E0E8FF;
+
+				align-items: center;
+border-radius: 10px;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.videoInformationDiv {
+	width: 50%;
+	height: 98%;
+	padding: 5px;
+	box-sizing: border-box;
+	position: absolute;
+	right: 0.5%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 1%;
+
+}
+
+.inputGeneric {
+	width: 60%;
+		background-color: #ffffff;
+	border: 3px solid #4AEDB7;
+	padding: 5px;
+	border-radius: 10px;
+	font-size: 20px;
+	display: flex;
+	margin: auto;
+	outline: none;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s ease;
+
+}
+.inputGeneric:hover {
+	border: 3px solid #38B38A;
+	background-color: #DEDEDE;
+}
+
+.textareaGeneric {
+	width: 60%;
+		background-color: #ffffff;
+	border: 3px solid #4AEDB7;
+	padding: 5px;
+	border-radius: 10px;
+	font-size: 15px;
+	resize: none;
+	height: 70%;
+	outline: none;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s ease;
+}
+
+.textareaGeneric:hover {
+	border: 3px solid #38B38A;
+	background-color: #DEDEDE;
+}
+
+.informationVideoDiv {
+	width: 45%;
+	height: 15%;
+	position: absolute;
+	bottom: 1%;
+	left: 0.5%;
+	background-color: #739DFF;
+	border: 3px solid #4B66A6;
+	border-radius: 10px;
+		display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.elementVideoCheckDiv {
+	position: absolute;
+	top: 50%;
+	left: 0.5%;
+	width: 30%;
+	height: 30%;
+	border: 3px solid #4D5BBA;
+	background-color: #697DFF;
+	border-radius: 10px;
+
+}
+
+.inputHolder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	height: 50%;
+}
+
+.uploadButton {
+	width: 20%;
+	font-size: 20px;
+	padding: 5px;
+	background-color: #8578FF;
+	border: 3px solid #695FC9;
+	font-weight: 600;
+	color: white;
+	border-radius: 10px;
+}
